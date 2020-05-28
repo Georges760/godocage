@@ -162,6 +162,7 @@ func (api *API) postResponse(u *url.URL, contenttype string, payload io.Reader) 
 	}
 	body, err := ioutil.ReadAll(resp.Body)
 	id = string(body)
+	id = id[1 : len(id)-1]
 	return
 }
 
